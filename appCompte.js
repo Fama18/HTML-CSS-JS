@@ -1,16 +1,52 @@
+        document.getElementById("h").style.display = "none";
+        document.getElementById("fraisCompte").style.display = "none";
+        document.getElementById("labfrais").style.display = "none";
+        document.getElementById("h1").style.display = "none";
+        document.getElementById("AgiosCompte").style.display = "none";
+        document.getElementById("labAgios").style.display = "none";
+
 function testCompte() {
     let typeCompte = document.getElementById("typeCompte");
-    let frais = document.getElementById("frais").value;
-    let agios = document.getElementById("agios").value;
 
-    if((typeCompte.value == "CESX") && (typeCompte.value == "CB")) {
-        frais = "10000 FCFA";
+    
+
+     if(typeCompte.value == "CESX") {
+
+        document.getElementById("h1").style.display = "none";
+        document.getElementById("AgiosCompte").style.display = "none";
+        document.getElementById("labAgios").style.display = "none";
+        document.getElementById("h").style.display = "";
+        document.getElementById("fraisCompte").style.display = "";
+        document.getElementById("labfrais").style.display = "";
+
     }
     else if(typeCompte.value == "CCS") {
-        document.getElementById("frais").disabled = "disabled";
-        agios = "2000 FCFA/mois";
+        document.getElementById("h").style.display = "none";
+        document.getElementById("fraisCompte").style.display = "none";
+        document.getElementById("labfrais").style.display = "none";
+        document.getElementById("h1").style.display = "";
+        document.getElementById("AgiosCompte").style.display = "";
+        document.getElementById("labAgios").style.display = "";
 
     }
+    else if(typeCompte.value == "CB") {
+        document.getElementById("h1").style.display = "none";
+        document.getElementById("AgiosCompte").style.display = "none";
+        document.getElementById("labAgios").style.display = "none";
+        document.getElementById("h").style.display = "";
+        document.getElementById("fraisCompte").style.display = "";
+        document.getElementById("labfrais").style.display = "";
+    }
+    else if(typeCompte.value == "S") {
+        document.getElementById("h").style.display = "none";
+        document.getElementById("fraisCompte").style.display = "none";
+        document.getElementById("labfrais").style.display = "none";
+        document.getElementById("h1").style.display = "none";
+        document.getElementById("AgiosCompte").style.display = "none";
+        document.getElementById("labAgios").style.display = "none";
+
+    }
+
 }
 
 let form2 = document.getElementById("form2").addEventListener("submit", function(ev) {
@@ -32,6 +68,12 @@ let form2 = document.getElementById("form2").addEventListener("submit", function
     else if(ValidNumAgence_Numcompte_cleRib.test(NumAgence.value) == false) {
         alert("format numero agence invalide !");
         ev.preventDefault();
+        NumAgence.value = "";
+    }
+    else if(NumAgence.value.length > 14) {
+        alert("le numero de l'Agence ne doit pas dépasser 14 caracteres !");
+        e.preventDefault();
+        NumAgence.value = "";
     }
 
     else {
@@ -42,7 +84,14 @@ let form2 = document.getElementById("form2").addEventListener("submit", function
         else if(ValidNumAgence_Numcompte_cleRib.test(NumCompte.value) == false) {
             alert("format numero compte invalide !");
             ev.preventDefault();
+            NumCompte.value = "";
         }
+        else if(NumCompte.value.length > 16) {
+            alert("le numero de compte ne doit pas dépasser 16 caracteres !");
+            e.preventDefault();
+            NumCompte.value = "";
+        }
+
 
         else {
                 if(cleRib.value == "") {
@@ -52,6 +101,12 @@ let form2 = document.getElementById("form2").addEventListener("submit", function
                 else if(ValidNumAgence_Numcompte_cleRib.test(cleRib.value) == false) {
                     alert("clé Rib invalide !");
                     ev.preventDefault();
+                    cleRib.value = "";
+                }
+                else if(cleRib.value.length > 9) {
+                    alert("la clé Rib ne doit pas dépasser 9 caracteres !");
+                    e.preventDefault();
+                    cleRib.value = "";
                 }
                 else {
                     if(infoclient.value == "") {
@@ -61,6 +116,15 @@ let form2 = document.getElementById("form2").addEventListener("submit", function
                 }
         }
     }
+
+    /*let typeCompte = document.getElementById("typeCompte");
+    if(typeCompte.value == "CESX") {
+        let fraisCompte = document.getElementById("fraisCompte").checked;
+
+        if(fraisCompte == false) {
+            ev.preventDefault();
+        }
+    }*/
 
 
 });

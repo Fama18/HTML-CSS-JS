@@ -30,21 +30,18 @@
                 </nav>
                 <br />
                 <form id="form2" action="" method="POST">
-                    <fieldset>
-                        <legend id="legend">Informations Compte</legend>
+                    <fieldset id="field3">
+                        <legend id="legend3">Informations Compte</legend>
                         <label for="typeCompte">Selectionner un type de compte* : </label>
                         <select id="typeCompte" name="typeCompte" value="" onchange="testCompte()">
-                            <option value="">--Sélectionner un type de compte--</option>
+                            <option value="S">--Sélectionner un type de compte--</option>
                             <option value="CESX">Compte épargne simple et xeewel</option>
                             <option value="CCS">Compte courant pour les salariés</option>
                             <option value="CB">Compte bloqué</option>
                         </select>
                         <span id="ErrorTypeCompte"></span><br />
                         <div id="compte">
-                        <div id="frais">
-                            <label for="frais">Frais : </label>
-                            <input type="text" id="frais" name="frais" value="10000 FCFA" placeholder="Frais d'ouverture" readonly />
-                            <span id="ErrorFrais"></span>
+                        <div id="fraiss">
                             <label for="NumAgence">Numéro de l'agence* : </label>
                             <input type="text" id="NumAgence" name="NumAgence" value="" placeholder="Numero de l'agence" />
                             <span id="ErrorNumAgence"></span>
@@ -53,24 +50,22 @@
                             <span id="ErrorCleRib"></span>
                         </div>
                         <div id="infoC">
-                            <label for="agios">Agios : </label>
-                            <input type="text" id="agios" name="agios" value="" placeholder="Agios" />
-                            <span id="ErrorAgios"></span>
                             <label for="NumCompte">Numéro du compte* : </label>
                             <input type="text" id="NumCompte" name="NumCompte" value="" placeholder="Numero de Compte" />
                             <span id="ErrorNumCompte"></span>
                             <label for="infoclient">Info client* : </label>
-                            <select id="infoclient" name="infoclient" value="">
-                                <option></option>
-                                <option>FS</option>
-                                <option>AC</option>
-                                <option>CM</option>
-                                <option>NJD</option>
-                            </select>
+                            <input type="text" id="infoclien" name="infoclient" value="" placeholder="Info du client" />
                             <span id="ErrorClient"></span>
                         </div>
                         </div><br />
-                    </fieldset>
+                    </fieldset><br />
+                    <label id="h" >Ce type de compte nécessite des frais qui s'élévent à 10000F</label><br />
+                    <input type="checkbox" id="fraisCompte" value="frais" />
+                    <label id="labfrais" >j'accepte les conditions de creation de compte</label>
+
+                    <label id="h1" >Ce type de compte nécessite des agios qui s'élévent à 2000F/ 3 mois</label><br />
+                    <input type="checkbox" id="AgiosCompte" value="agios" />
+                    <label id="labAgios" >j'accepte les conditions de creation de compte</label><br />
                     <br />
                     <input type="submit" name="btn" value="Valider" id="btn" />
                     <span id="Error"></span>

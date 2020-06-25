@@ -76,12 +76,12 @@ main {
     background: rgba(0,0,0,0.5);
     border-radius: 15px;
 }
-#legend {
+#legend1, #legend2, #legend3 {
     color: #FFF;
     font-size: 22px;
     text-align: center;
 }
-fieldset {
+#field1, #field2, #field3 {
     display: flex;
     flex-direction: column;
 }
@@ -104,7 +104,7 @@ select {
     display: flex;
     justify-content:space-around;
 }
-#frais, #infoClient1, #infoSupp1 {
+#fraiss, #infoClient1, #infoSupp1 {
     display: flex;
     flex-direction: column;
     justify-content:space-around;
@@ -140,8 +140,116 @@ select {
     font-size: 20px;
     border-radius: 15px;
 }
+#h {
+    color: #FFF;
+    margin-left:250px;
+}
+#h1 {
+    margin-left:240px;
+}
+#fraisCompte, #AgiosCompte {
+    margin-left: 270px;
+}
 #ErrorC, #Error {
     margin-left: 35%;
     font-size: 20px;
     text-align: center;
+}
+@media screen and (max-width: 1024px) {
+	body {
+        background-size: 400%;
+	}
+	#entete {
+	height:50px;
+	}
+	#img1 {
+	width:60px;
+	height:10px;
+	height:50px;
+    }
+	#text1 {
+	margin-left:0px;
+	font-size:12px;
+	font-family:"MS Serif", "New York", serif;
+    text-align:center;
+    color: brown;
+    }
+    #text2 {
+        margin-right: 10%;
+        margin-left: 10%;
+        color: brown;
+        font-size:10px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color:#6CC;
+        height: 40px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    main {
+        margin-left:2%;
+        margin-right:2%;
+    }
+    fieldset {
+            width:270px;
+            margin-left:auto;
+            margin-right:auto;
+    }
+    #legend {
+        text-align:center;
+        font-size:1em;
+        font-family:"Times New Roman", Times, serif;
+        }
+    #infoClient, #infoSupp, #compte {
+        display: flex;
+        flex-direction: column;
+    }
+    nav {
+        background-color: cadetblue;
+        height: 25px;
+        margin:0;
+        padding:0;
+    }
+    #navigation ul {
+        list-style: none;
+        text-align:center;
+        margin:0;
+        padding:0;
+      }
+    #navigation li {
+          display:inline-block;
+          text-align:center;
+      }
+    #navigation a {
+        text-decoration:none;
+        color:#FFF;
+        width:100px;
+        display:block;
+        font-size:18px;
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    }
+    #navigation a:hover {
+        background: olive;
+        transition:0.6s;
+        height:25px;
+    }
+    #form1 input[type=text], #form1 input[type=email], #form1 input[type=tel], #form1 input[type=date], #form1 input[type=number] {
+        display:inline-block;
+        margin-bottom:8px;
+        width:250px;
+        border-radius:7px;
+        padding:7px;
+    }
+    select, #typeCompte {
+        width:260px;
+        border-radius:7px;
+        padding:7px;
+        margin-left: 0px;
+    }
+    #form2 input[type=text], #form1 input[type=email], #form1 input[type=tel], #form1 input[type=date] {
+        display:inline-block;
+        margin-bottom:8px;
+        width:250px;
+        border-radius:7px;
+        padding:7px;
+    }
 }
